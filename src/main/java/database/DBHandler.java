@@ -13,13 +13,14 @@ public class DBHandler {
 
         Connection connection;
             try {
-                connection = DriverManager.getConnection(ConnectionUrl, user, pass);
+                connection = DriverManager.getConnection(ConnectionUrl,user,pass);
 
-                    String query = "CREATE TABLE movies(id INT auto_increment, title VARCHAR(255), yearOfRelease int)";
 
-                PreparedStatement statement = connection.prepareStatement(query);
-
-               statement.execute();
+//                    String query = "CREATE TABLE movies(id INT auto_increment, title VARCHAR(255), yearOfRelease int)";
+//
+//                PreparedStatement statement = connection.prepareStatement(query);
+//
+//               statement.execute();
 
                 System.out.println("Connection to database successful");
             } catch (SQLException e) {
