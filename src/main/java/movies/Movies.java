@@ -2,12 +2,10 @@ package movies;
 
 public class Movies {
 
-
-
-    int id;
-    String title;
-    String genre;
-    int yearOfRelease;
+    public int id;
+    public String title;
+    public String genre;
+    public int yearOfRelease;
 
     public Movies(int id, String title, String genre, int yearOfRelease) {
         this.id = id;
