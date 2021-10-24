@@ -1,6 +1,9 @@
 package database;
 
 import java.sql.*;
+import java.sql.Connection;
+import java.sql.DriverManager;
+import java.sql.SQLException;
 
 public class DBHandler {
 
@@ -13,7 +16,8 @@ public class DBHandler {
 
         Connection connection;
             try {
-                connection = DriverManager.getConnection(ConnectionUrl, user, pass);
+                connection = DriverManager.getConnection(ConnectionUrl,user,pass);
+
 
                     String query = "CREATE TABLE movies(id INT auto_increment, title VARCHAR(255), yearOfRelease int)";
 

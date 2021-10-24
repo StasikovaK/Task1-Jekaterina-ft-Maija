@@ -1,10 +1,11 @@
 package movies;
 
 public class Movies {
-    int id;
-    String title;
-    String genre;
-    int yearOfRelease;
+
+    public int id;
+    public String title;
+    public String genre;
+    public int yearOfRelease;
 
     public Movies(int id, String title, String genre, int yearOfRelease) {
         this.id = id;
@@ -13,8 +14,7 @@ public class Movies {
         this.yearOfRelease = yearOfRelease;
     }
 
-    public Movies() {
-    }
+    public Movies() {}
 
     public Movies(String title, String genre, int yearOfRelease) {
         this.title = title;
@@ -22,3 +22,4 @@ public class Movies {
         this.yearOfRelease = yearOfRelease;
     }
 }
+
