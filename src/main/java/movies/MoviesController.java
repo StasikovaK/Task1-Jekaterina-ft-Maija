@@ -6,7 +6,7 @@ import java.util.ArrayList;
 public class MoviesController {
     MoviesRepository moviesRepository = new MoviesRepository();
 
-    public String create(Movies movies) {
+    public String create(Movie movies) {
         try {
             moviesRepository.createMovie(movies);
             return "Movie created successfully";
@@ -16,7 +16,7 @@ public class MoviesController {
         }
     }
 
-    public String update(Movies movie) {
+    public String update(Movie movie) {
         try {
             moviesRepository.updateMovie(movie);
             return "Movie updated successfully";
@@ -27,7 +27,7 @@ public class MoviesController {
 
     }
 
-    public String delete(Movies movie) {
+    public String delete(Movie movie) {
         try {
             moviesRepository.deleteMovie(movie.id);
             return "Movie deleted successfully";
@@ -37,7 +37,7 @@ public class MoviesController {
         }
     }
 
-    public ArrayList<Movies> getAllMovies() {
+    public ArrayList<Movie> getAllMovies() {
         try {
             return moviesRepository.getAllMovies();
         } catch (SQLException e) {

@@ -7,23 +7,19 @@ import java.sql.SQLException;
 
 public class DBHandler {
 
-
-    public static void main(String[] args) {
-
         String ConnectionUrl = "jdbc:mysql://localhost:3306/movies";
-        String user = "";
-        String pass = "";
+        String user = "root";
+        String pass = "root";
 
         Connection connection;
-            try {
+
+    public DBHandler() {
+        try {
                 connection = DriverManager.getConnection(ConnectionUrl,user,pass);
-
-
-                    String query = "CREATE TABLE movies(id INT auto_increment, title VARCHAR(255), yearOfRelease int)";
-
-                PreparedStatement statement = connection.prepareStatement(query);
-
-               statement.execute();
+//
+//                String query = "CREATE TABLE movies(id INT auto_increment, title VARCHAR(255), yearOfRelease int)";
+//                PreparedStatement statement = connection.prepareStatement(query);
+//               statement.execute();
 
                 System.out.println("Connection to database successful");
             } catch (SQLException e) {
@@ -33,5 +29,8 @@ public class DBHandler {
             }
 
         }
+    public Connection getConnection() {
+        return connection;
+    }
     }
 

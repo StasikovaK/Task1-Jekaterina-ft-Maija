@@ -15,7 +15,7 @@ public class MoviesRepository {
     }
 DBHandler dbHandler = new DBHandler();
 
-public void createMovie(Movies movies) throws SQLException {
+public void createMovie(Movie movies) throws SQLException {
     String query = "Insert into movies (title, genre, yearOfRelease) VALUES(?,?,?)";
 
     PreparedStatement preparedStatement = dbHandler.getConnection().prepareStatement(query);
@@ -26,7 +26,7 @@ public void createMovie(Movies movies) throws SQLException {
     preparedStatement.execute();
     preparedStatement.close();
 }
-public void updateMovie(Movies movies) throws SQLException {
+public void updateMovie(Movie movies) throws SQLException {
     String query = "UPDATE movies SET title=?, genre=?, yearOfRelease=? WHERE id=?";
     PreparedStatement preparedStatement = dbHandler.getConnection().prepareStatement(query);
     preparedStatement.setString(1, movies.title);
@@ -45,21 +45,22 @@ public void deleteMovie(int id) throws SQLException {
     preparedStatement.execute();
     preparedStatement.close();
 }
-public ArrayList<Movies> getAllMovies() throws SQLException {
+public ArrayList<Movie> getAllMovies() throws SQLException {
     String query = "SELECT * FROM movies";
 
     Statement statement = dbHandler.getConnection().createStatement();
     ResultSet results = statement.executeQuery(query);
-    ArrayList<Movies> movies = new ArrayList<>();
+    ArrayList<Movie> movies = new ArrayList<>();
 
     while(results.next()) {
         int id = results.getInt("id");
         String movie = results.getString("movie");
         String genre = results.getString("genre");
         int yearOfRelease = results.getInt("yearOfRelease");
-        Movies moviess = new Movies (movie, genre, yearOfRelease);
+        Movie moviess = new Movie (movie, genre, yearOfRelease);
         movies.add(moviess);
     }
     return movies;
+
 }
 }
