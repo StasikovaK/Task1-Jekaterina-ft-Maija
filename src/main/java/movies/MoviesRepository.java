@@ -61,5 +61,6 @@ public ArrayList<Movie> getAllMovies() throws SQLException {
         movies.add(moviess);
     }
     return movies;
+
 }
 }

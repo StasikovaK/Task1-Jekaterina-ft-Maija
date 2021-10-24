@@ -1,22 +1,22 @@
 package movies;
 
-public class Movies {
+public class Movie {
 
     public int id;
     public String title;
     public String genre;
     public int yearOfRelease;
 
-    public Movies(int id, String title, String genre, int yearOfRelease) {
+    public Movie(int id, String title, String genre, int yearOfRelease) {
         this.id = id;
         this.title = title;
         this.genre = genre;
         this.yearOfRelease = yearOfRelease;
     }
 
-    public Movies() {}
+    public Movie() {}
 
-    public Movies(String title, String genre, int yearOfRelease) {
+    public Movie(String title, String genre, int yearOfRelease) {
         this.title = title;
         this.genre = genre;
         this.yearOfRelease = yearOfRelease;
