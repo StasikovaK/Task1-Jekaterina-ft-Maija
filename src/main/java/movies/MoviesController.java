@@ -6,33 +6,64 @@ import java.util.ArrayList;
 public class MoviesController {
     MoviesRepository moviesRepository = new MoviesRepository();
 
-    public String createMovie(Movies movie){
-        moviesRepository.createMovie(movie);
-        return "Movie created successfully";
-    }
-    public String updateMovie(Movies movie){
-        moviesRepository.updateMovie(movie);
-        return "Movie updated successfully";
-    }
-    public ArrayList<Movies> getAllMovies(){
-        return moviesRepository.getAll();
-    }
-    public Movies findMovie(String name){
+    public String create(Movies movies) {
         try {
-            return moviesRepository.getMovieByName(name);
+            moviesRepository.createMovie(movies);
+            return "Movie created successfully";
         } catch (SQLException e) {
-            System.out.println("Cannot retrieve movie from database");
             e.printStackTrace();
-            return null;
+            return "Error creating a movie";
         }
     }
-    public Movies findMovie(int id){
+
+    public String update(Movies movie) {
         try {
-            return moviesRepository.getMovie(id);
+            moviesRepository.updateMovie(movie);
+            return "Movie updated successfully";
         } catch (SQLException e) {
-            System.out.println("Cannot find movie with id: " + id);
+            e.printStackTrace();
+            return "Error updating a movie";
+        }
+
+    }
+
+    public String delete(Movies movie) {
+        try {
+            moviesRepository.deleteMovie(movie.id);
+            return "Movie deleted successfully";
+        } catch (SQLException e) {
+            e.printStackTrace();
+            return "Error deleting a movie";
+        }
+    }
+
+    public ArrayList<Movies> getAllMovies() {
+        try {
+            return moviesRepository.getAllMovies();
+        } catch (SQLException e) {
             e.printStackTrace();
             return null;
         }
     }
 }
+
+//
+//    public Movies findMovie(String name){
+//        try {
+//            return moviesRepository.getMovieByName(name);
+//        } catch (SQLException e) {
+//            System.out.println("Cannot retrieve movie from database");
+//            e.printStackTrace();
+//            return null;
+//        }
+//    }
+//    public Movies findMovie(int id){
+//        try {
+//            return moviesRepository.getMovie(id);
+//        } catch (SQLException e) {
+//            System.out.println("Cannot find movie with id: " + id);
+//            e.printStackTrace();
+//            return null;
+//        }
+//    }
+
