@@ -27,9 +27,9 @@ public class MoviesController {
 
     }
 
-    public String delete(Movie movie) {
+    public String delete(int id) {
         try {
-            moviesRepository.deleteMovie(movie.id);
+            moviesRepository.deleteMovie(id);
             return "Movie deleted successfully";
         } catch (SQLException e) {
             e.printStackTrace();

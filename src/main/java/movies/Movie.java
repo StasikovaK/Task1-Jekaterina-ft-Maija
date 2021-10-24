@@ -21,5 +21,11 @@ public class Movie {
         this.genre = genre;
         this.yearOfRelease = yearOfRelease;
     }
+    public String toString() {
+        return "\nTitle - " + this.title +
+                "\n Genre - " + this.genre +
+                "\n Year Of Release - " + this.yearOfRelease ;
+
+    }
 }
 

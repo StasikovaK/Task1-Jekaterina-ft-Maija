@@ -9,10 +9,7 @@ import java.sql.Statement;
 import java.util.ArrayList;
 
 public class MoviesRepository {
-    public static void main(String[] args) {
-        MoviesRepository moviesRepository = new MoviesRepository();
-       // moviesRepository.createMovie(new Movies("Title1", "Genre1", 2020));
-    }
+
 DBHandler dbHandler = new DBHandler();
 
 public void createMovie(Movie movies) throws SQLException {
@@ -54,7 +51,7 @@ public ArrayList<Movie> getAllMovies() throws SQLException {
 
     while(results.next()) {
         int id = results.getInt("id");
-        String movie = results.getString("movie");
+        String movie = results.getString("title");
         String genre = results.getString("genre");
         int yearOfRelease = results.getInt("yearOfRelease");
         Movie moviess = new Movie (movie, genre, yearOfRelease);
