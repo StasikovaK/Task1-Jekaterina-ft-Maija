@@ -6,8 +6,8 @@ public class DBHandler {
     public static void main(String[] args) {
 
         String ConnectionUrl = "jdbc:mysql://localhost:3306/movies";
-        String user = "root";
-        String pass = "88gy4d5fs0k9ja";
+        String user = "";
+        String pass = "";
 
         Connection connection;
             try {
